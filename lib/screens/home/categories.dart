@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:menu_app/data/dummy_data.dart';
 import 'package:menu_app/models/category.dart';
 import 'package:menu_app/models/icons_card.dart';
-import 'package:menu_app/widgets/card_icon_item.dart';
-import 'package:menu_app/screens/new_category.dart';
-import 'package:menu_app/widgets/category_view.dart';
+import 'package:menu_app/widgets/home/card_icon_item.dart';
+import 'package:menu_app/screens/home/new_category.dart';
+import 'package:menu_app/widgets/home/category_view.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key});

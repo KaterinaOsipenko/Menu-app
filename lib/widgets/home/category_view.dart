@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:menu_app/models/category.dart';
-import 'package:menu_app/widgets/category_grid_item.dart';
+import 'package:menu_app/widgets/home/category_grid_item.dart';
 
 class CategoryViewWidget extends StatelessWidget {
   final List<Category> availableCategoriesList;
