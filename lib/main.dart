@@ -38,8 +38,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: const MealsScreen(title: "Some category", meals: dummyMeals),
-      // home: const CategoriesScreen(),
+      home: const CategoriesScreen(),
     );
   }
 }
