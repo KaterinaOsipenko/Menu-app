@@ -3,13 +3,12 @@ import 'package:menu_app/models/category.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category category;
-  final double height;
   final VoidCallback onSelected;
-  const CategoryItem(
-      {super.key,
-      required this.category,
-      required this.height,
-      required this.onSelected});
+  const CategoryItem({
+    super.key,
+    required this.category,
+    required this.onSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +17,17 @@ class CategoryItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(16),
       splashColor: Theme.of(context).colorScheme.primary,
       child: Container(
-        height: height,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              category.color.withOpacity(0.55),
+              category.color.withOpacity(0.9)
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(16),
           color: category.color.withOpacity(0.6),
         ),
         child: Text(
