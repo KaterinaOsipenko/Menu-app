@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menu_app/screens/tab_screen.dart';
 import 'screens/home/categories.dart';
 
 final kColorScheme = ColorScheme.fromSeed(
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: const CategoriesScreen(),
+      home: const TabScreen(),
     );
   }
 }

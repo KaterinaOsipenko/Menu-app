@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:menu_app/data/dummy_data.dart';
 import 'package:menu_app/models/category.dart';
 import 'package:menu_app/screens/home/new_category.dart';
+import 'package:menu_app/utils/constants.dart';
 import 'package:menu_app/widgets/home/category_view.dart';
 
 class CategoriesScreen extends StatefulWidget {
@@ -39,54 +40,21 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     );
   }
 
-  PreferredSizeWidget _buildIOSAppbar() {
-    return CupertinoNavigationBar(
-      leading: const Text("Menu App"),
-      trailing: IconButton(
-          onPressed: _openAddNewCategory, icon: const Icon(Icons.add_outlined)),
-    );
-  }
-
-  PreferredSizeWidget _buildAndriodAppBar() {
-    return AppBar(
-      backgroundColor: Theme.of(context).colorScheme.primary,
-      foregroundColor: Theme.of(context).colorScheme.onPrimary,
-      elevation: 0,
-      title: const Text("Menu App"),
-      actions: [
-        IconButton(
-          onPressed: _openAddNewCategory,
-          icon: const Icon(Icons.add_outlined),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildAngroodBootomBar() {
-    return BottomNavigationBar(items: const [
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home_filled),
-        label: 'Home',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.favorite),
-        label: 'Fav',
-      ),
-    ]);
-  }
-
   @override
   Widget build(BuildContext context) {
-    final appBar =
-        Platform.isAndroid ? _buildAndriodAppBar() : _buildIOSAppbar();
-    final mediaQuery = MediaQuery.of(context);
-    final contentHeight = (mediaQuery.size.height -
-        appBar.preferredSize.height -
-        mediaQuery.padding.top);
-
     return Scaffold(
-      appBar: appBar,
-      bottomNavigationBar: _buildAngroodBootomBar(),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        elevation: 0,
+        title: const Text(categoriesPageTitle),
+        actions: [
+          IconButton(
+            onPressed: _openAddNewCategory,
+            icon: const Icon(Icons.add_outlined),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: CategoryViewWidget(
           availableCategoriesList: availableCategories,
