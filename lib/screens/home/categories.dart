@@ -1,14 +1,14 @@
-import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:menu_app/data/dummy_data.dart';
 import 'package:menu_app/models/category.dart';
+import 'package:menu_app/models/meal.dart';
 import 'package:menu_app/screens/home/new_category.dart';
 import 'package:menu_app/utils/constants.dart';
 import 'package:menu_app/widgets/home/category_view.dart';
 
 class CategoriesScreen extends StatefulWidget {
-  const CategoriesScreen({super.key});
+  final void Function(Meal meal) onToggleFavourite;
+  const CategoriesScreen({super.key, required this.onToggleFavourite});
 
   @override
   State<CategoriesScreen> createState() => _CategoriesScreenState();
@@ -58,6 +58,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       body: SafeArea(
         child: CategoryViewWidget(
           availableCategoriesList: availableCategories,
+          onToggleFavourite: widget.onToggleFavourite,
         ),
       ),
     );

@@ -6,7 +6,12 @@ import 'package:menu_app/widgets/meals/meals_veiw_widget.dart';
 class MealsScreen extends StatelessWidget {
   final String title;
   final List<Meal> meals;
-  const MealsScreen({super.key, required this.title, required this.meals});
+  final void Function(Meal meal) onToggleFavourite;
+  const MealsScreen(
+      {super.key,
+      required this.title,
+      required this.meals,
+      required this.onToggleFavourite});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +19,7 @@ class MealsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: MealsViewWidget(
-        meals: meals,
-      ),
+      body: MealsViewWidget(meals: meals, onToggleFavourite: onToggleFavourite),
     );
   }
 }

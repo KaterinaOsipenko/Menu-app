@@ -5,7 +5,9 @@ import 'package:menu_app/models/meal.dart';
 
 class MealsViewWidget extends StatelessWidget {
   final List<Meal> meals;
-  const MealsViewWidget({super.key, required this.meals});
+  final void Function(Meal meal) onToggleFavourite;
+  const MealsViewWidget(
+      {super.key, required this.meals, required this.onToggleFavourite});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,8 @@ class MealsViewWidget extends StatelessWidget {
           )
         : ListView.builder(
             itemBuilder: (context, index) {
-              return MealItemWidget(meal: meals[index]);
+              return MealItemWidget(
+                  meal: meals[index], onToggleFavourite: onToggleFavourite);
             },
             itemCount: meals.length,
           );
