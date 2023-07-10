@@ -63,8 +63,8 @@ class _NewCategoryScreenState extends State<NewCategoryScreen> {
           'Got it',
           style: Theme.of(context)
               .textTheme
-              .titleMedium!
-              .copyWith(color: Theme.of(context).colorScheme.onBackground),
+              .bodySmall!
+              .copyWith(color: Theme.of(context).colorScheme.primary),
         ),
         onPressed: () {
           Navigator.of(context).pop();

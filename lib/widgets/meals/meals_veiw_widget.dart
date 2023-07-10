@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menu_app/utils/constants.dart';
 
 import 'package:menu_app/widgets/meals/meal_item_widget.dart';
 import 'package:menu_app/models/meal.dart';
@@ -17,14 +18,14 @@ class MealsViewWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Uh oh ... nothing here!',
+                  nothingHereMsg,
                   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                         color: Theme.of(context).colorScheme.onBackground,
                       ),
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Try selecting a different category!',
+                  trySelectAnotherCategoryMsg,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: Theme.of(context).colorScheme.onBackground,
                       ),

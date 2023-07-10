@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menu_app/config/app_theme.dart';
 import 'package:menu_app/screens/tab_screen.dart';
 import 'screens/home/categories.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Menu App',
-      theme: theme,
+      theme: AppTheme.light,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
       home: const TabScreen(),

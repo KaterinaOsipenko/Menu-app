@@ -23,7 +23,9 @@ class _TabScreenState extends State<TabScreen> {
 
   void onToggleFavourite(Meal meal) {
     if (favouriteMeal.contains(meal)) {
-      favouriteMeal.remove(meal);
+      setState(() {
+        favouriteMeal.remove(meal);
+      });
     } else {
       favouriteMeal.add(meal);
     }

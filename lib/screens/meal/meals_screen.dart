@@ -17,7 +17,12 @@ class MealsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Center(
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+        ),
       ),
       body: MealsViewWidget(meals: meals, onToggleFavourite: onToggleFavourite),
     );

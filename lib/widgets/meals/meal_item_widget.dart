@@ -56,11 +56,9 @@ class MealItemWidget extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
                         softWrap: true,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                              color: Theme.of(context).colorScheme.background,
+                            ),
                       ),
                       const SizedBox(
                         height: 5,
@@ -80,8 +78,9 @@ class MealItemWidget extends StatelessWidget {
                             width: 7,
                           ),
                           MealItemTrait(
-                              icon: Icons.attach_money_outlined,
-                              label: meal.affordability.name),
+                            icon: Icons.attach_money_outlined,
+                            label: meal.affordability.name,
+                          ),
                         ],
                       ),
                     ],

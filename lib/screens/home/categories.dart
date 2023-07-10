@@ -5,6 +5,7 @@ import 'package:menu_app/models/meal.dart';
 import 'package:menu_app/screens/home/new_category.dart';
 import 'package:menu_app/utils/constants.dart';
 import 'package:menu_app/widgets/home/category_view.dart';
+import 'package:menu_app/widgets/home/greeting.dart';
 
 class CategoriesScreen extends StatefulWidget {
   final void Function(Meal meal) onToggleFavourite;
@@ -44,10 +45,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        elevation: 0,
-        title: const Text(categoriesPageTitle),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        title: Center(
+          child: Text(
+            categoriesPageTitle,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: _openAddNewCategory,
@@ -56,9 +60,32 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ],
       ),
       body: SafeArea(
-        child: CategoryViewWidget(
-          availableCategoriesList: availableCategories,
-          onToggleFavourite: widget.onToggleFavourite,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Theme.of(context).colorScheme.primaryContainer,
+                Colors.white
+              ],
+            ),
+          ),
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.sizeOf(context).height * 0.03,
+                  bottom: MediaQuery.sizeOf(context).height * 0.01,
+                ),
+                child: const GreetingWidget(),
+              ),
+              CategoryViewWidget(
+                availableCategoriesList: availableCategories,
+                onToggleFavourite: widget.onToggleFavourite,
+              ),
+            ],
+          ),
         ),
       ),
     );

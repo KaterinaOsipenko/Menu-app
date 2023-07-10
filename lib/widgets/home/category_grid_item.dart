@@ -19,23 +19,15 @@ class CategoryItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              category.color.withOpacity(0.55),
-              category.color.withOpacity(0.9)
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
           borderRadius: BorderRadius.circular(16),
-          color: category.color.withOpacity(0.6),
+          color: category.color.withOpacity(0.2),
         ),
         child: Text(
           category.title,
           style: Theme.of(context)
               .textTheme
-              .titleLarge!
-              .copyWith(color: Theme.of(context).colorScheme.onBackground),
+              .headlineMedium!
+              .copyWith(color: Theme.of(context).colorScheme.tertiary),
         ),
       ),
     );
