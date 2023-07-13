@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:menu_app/models/meal.dart';
-import 'package:menu_app/widgets/meals/meal_details_features.dart';
-import 'package:menu_app/widgets/meals/meal_details_trait.dart';
-import 'package:menu_app/widgets/meals/meal_image.dart';
-import 'package:menu_app/widgets/meals/meal_ingridients.dart';
-import 'package:menu_app/widgets/meals/meal_steps.dart';
+import 'package:menu_app/widgets/meals/meals_details/meal_details_features.dart';
+import 'package:menu_app/widgets/meals/meals_details/meal_details_trait.dart';
+import 'package:menu_app/widgets/meals/meals_details/meal_image.dart';
+import 'package:menu_app/widgets/meals/meals_details/meal_ingridients.dart';
+import 'package:menu_app/widgets/meals/meals_details/meal_steps.dart';
 
 class MealItemDetailScreen extends StatefulWidget {
   final Meal meal;
