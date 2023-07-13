@@ -14,3 +14,8 @@ const String nothingHereMsg = 'Uh oh ... nothing here!';
 const String complexityMsg = 'Complexity';
 const String affordabilityMsg = 'Affordability';
 const String durationMsg = 'Duration';
+
+const String vegetarianMsg = 'Vegeterian : ';
+const String veganMsg = 'Vegan : ';
+const String glutenFreeMsg = 'Gluten Free : ';
+const String lactoseFreeMsg = 'Lactose Free : ';

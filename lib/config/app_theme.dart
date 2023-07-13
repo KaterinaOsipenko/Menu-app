@@ -16,7 +16,7 @@ abstract class AppTheme {
         headlineSmall: GoogleFonts.montserrat(
           textStyle: const TextStyle(
             fontSize: 18,
-            fontWeight: FontWeight.normal,
+            fontWeight: FontWeight.w500,
           ),
         ),
         headlineLarge: GoogleFonts.montserrat(
@@ -29,6 +29,18 @@ abstract class AppTheme {
           textStyle: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w700,
+          ),
+        ),
+        titleSmall: GoogleFonts.montserrat(
+          textStyle: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        titleMedium: GoogleFonts.montserrat(
+          textStyle: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
           ),
         ),
         bodySmall: GoogleFonts.montserrat(

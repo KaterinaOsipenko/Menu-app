@@ -8,23 +8,30 @@ class MealDetailsTrait extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          '$durationMsg : ${meal.duration} min',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-        Text(
-          '$affordabilityMsg : ${meal.affordability.name} ',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-        Text(
-          '$complexityMsg : ${meal.complexity.name} ',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-      ],
+    final mediaQuerySize = MediaQuery.sizeOf(context);
+    return Container(
+      alignment: Alignment.centerLeft,
+      margin: EdgeInsets.only(
+        top: mediaQuerySize.height * 0.02,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            '$durationMsg : ${meal.duration} min',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+          Text(
+            '$affordabilityMsg : ${meal.affordability.name} ',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+          Text(
+            '$complexityMsg : ${meal.complexity.name} ',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+        ],
+      ),
     );
   }
 }

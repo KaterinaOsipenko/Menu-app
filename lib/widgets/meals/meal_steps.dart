@@ -9,32 +9,45 @@ class MealSteps extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.only(
-            top: mediaQuery.size.height * 0.02,
-            bottom: mediaQuery.size.height * 0.01,
-          ),
-          child: Text(
-            stepsText,
-            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-          ),
-        ),
-        for (int i = 0; i < meal.steps.length; i++)
+    return Container(
+      margin: EdgeInsets.only(
+        top: mediaQuery.size.height * 0.02,
+        bottom: mediaQuery.size.height * 0.01,
+      ),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.primary,
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: Column(
+        children: [
           Container(
-            margin: EdgeInsets.symmetric(
-                vertical: mediaQuery.size.height * 0.01,
-                horizontal: mediaQuery.size.width * 0.01),
+            padding: EdgeInsets.only(
+              top: mediaQuery.size.height * 0.02,
+              bottom: mediaQuery.size.height * 0.01,
+            ),
             child: Text(
-              '${i + 1})  ${meal.steps[i]}',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleMedium!,
+              stepsText,
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    color: Theme.of(context).colorScheme.background,
+                  ),
             ),
           ),
-      ],
+          for (int i = 0; i < meal.steps.length; i++)
+            Container(
+              margin: EdgeInsets.symmetric(
+                  vertical: mediaQuery.size.height * 0.01,
+                  horizontal: mediaQuery.size.width * 0.01),
+              child: Text(
+                '${i + 1})  ${meal.steps[i]}',
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(color: Theme.of(context).colorScheme.background),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

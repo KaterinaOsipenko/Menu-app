@@ -14,18 +14,18 @@ class MealIngridients extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.only(
-            top: mediaQuery.size.height * 0.02,
-            bottom: mediaQuery.size.height * 0.01,
+            bottom: mediaQuery.size.height * 0.015,
           ),
           child: Text(
             ingridientsText,
-            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.tertiary,
                 ),
           ),
         ),
         for (var ingridient in meal.ingredients)
           Container(
+            alignment: Alignment.centerLeft,
             margin: EdgeInsets.only(bottom: mediaQuery.size.height * 0.005),
             child: Text(
               ingridient,
