@@ -3,6 +3,7 @@ import 'package:menu_app/models/meal.dart';
 import 'package:menu_app/screens/home/categories.dart';
 import 'package:menu_app/screens/meal/meals_screen.dart';
 import 'package:menu_app/utils/constants.dart';
+import 'package:menu_app/widgets/main_drawer.dart';
 
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
@@ -31,6 +32,13 @@ class _TabScreenState extends State<TabScreen> {
     }
   }
 
+  void setScreen(String identifier) {
+    if (identifier == filtersMsg) {
+    } else {
+      Navigator.of(context).pop();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget activePage = CategoriesScreen(onToggleFavourite: onToggleFavourite);
@@ -41,6 +49,9 @@ class _TabScreenState extends State<TabScreen> {
           onToggleFavourite: onToggleFavourite);
     }
     return Scaffold(
+      drawer: MainDrawer(
+        onSelectedScreen: setScreen,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 50,
         onTap: onSelectedTab,

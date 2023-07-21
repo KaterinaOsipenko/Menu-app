@@ -19,3 +19,7 @@ const String vegetarianMsg = 'Vegeterian : ';
 const String veganMsg = 'Vegan : ';
 const String glutenFreeMsg = 'Gluten Free : ';
 const String lactoseFreeMsg = 'Lactose Free : ';
+
+const String cookingUpMsg = 'Cooking up!';
+const String mealsMsg = 'Meals';
+const String filtersMsg = 'Filters';
