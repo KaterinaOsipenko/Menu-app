@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menu_app/models/filters.dart';
 import 'package:menu_app/screens/tab_screen.dart';
 import 'package:menu_app/utils/constants.dart';
 import 'package:menu_app/widgets/main_drawer.dart';
@@ -25,24 +26,32 @@ class _FiltersScreenState extends State<FiltersScreen> {
         ),
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            SwitchListTile(
-              value: glutenFreeSet,
-              activeColor: Theme.of(context).colorScheme.primary,
-              title: Text(
-                glutenFreeFilterMsg,
+        child: WillPopScope(
+          onWillPop: () async {
+            Navigator.of(context).pop({
+              Filters.glutenFree: glutenFreeSet,
+            });
+            return false;
+          },
+          child: Column(
+            children: [
+              SwitchListTile(
+                value: glutenFreeSet,
+                activeColor: Theme.of(context).colorScheme.primary,
+                title: Text(
+                  glutenFreeFilterMsg,
+                ),
+                subtitle: Text(glutenFreeFilterSubMsg),
+                onChanged: (isChecked) {
+                  setState(
+                    () {
+                      glutenFreeSet = isChecked;
+                    },
+                  );
+                },
               ),
-              subtitle: Text(glutenFreeFilterSubMsg),
-              onChanged: (isChecked) {
-                setState(
-                  () {
-                    glutenFreeSet = isChecked;
-                  },
-                );
-              },
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
