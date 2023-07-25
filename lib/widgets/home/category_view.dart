@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menu_app/data/dummy_meal.dart';
+import 'package:menu_app/models/filters.dart';
 import 'package:menu_app/models/meal.dart';
 import 'package:menu_app/utils/constants.dart';
 import 'package:menu_app/widgets/home/category_grid_item.dart';
@@ -9,15 +10,16 @@ import 'package:menu_app/screens/meal/meals_screen.dart';
 class CategoryViewWidget extends StatelessWidget {
   final List<Category> availableCategoriesList;
   final void Function(Meal meal) onToggleFavourite;
+  final List<Meal> meals;
 
-  const CategoryViewWidget({
-    super.key,
-    required this.availableCategoriesList,
-    required this.onToggleFavourite,
-  });
+  const CategoryViewWidget(
+      {super.key,
+      required this.availableCategoriesList,
+      required this.onToggleFavourite,
+      required this.meals});
 
   void _selectCategory(BuildContext context, Category category) {
-    final mealsByCategory = dummyMeals
+    final mealsByCategory = meals
         .where(
           (meal) => meal.categories.contains(category.id),
         )

@@ -9,7 +9,9 @@ import 'package:menu_app/widgets/home/greeting.dart';
 
 class CategoriesScreen extends StatefulWidget {
   final void Function(Meal meal) onToggleFavourite;
-  const CategoriesScreen({super.key, required this.onToggleFavourite});
+  final List<Meal> meals;
+  const CategoriesScreen(
+      {super.key, required this.onToggleFavourite, required this.meals});
 
   @override
   State<CategoriesScreen> createState() => _CategoriesScreenState();
@@ -82,6 +84,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               ),
               CategoryViewWidget(
                 availableCategoriesList: availableCategories,
+                meals: widget.meals,
                 onToggleFavourite: widget.onToggleFavourite,
               ),
             ],
